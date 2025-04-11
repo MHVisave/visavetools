@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online image compression tool to reduce file size while maintaining quality. Supports JPG, PNG, WEBP formats. Perfect for web optimization.">
+    <meta name="keywords" content="image compressor, reduce image size, online image optimizer, JPG compressor, PNG compressor, WEBP converter">
+    <meta name="author" content="ImageCompressPro">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Free Online Image Compression Tool">
+    <meta property="og:description" content="Compress your images online for free. Reduce file size without losing quality.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.yourdomain.com">
+    <meta property="og:image" content="https://www.yourdomain.com/preview.jpg">
+    <link rel="canonical" href="https://www.yourdomain.com">
+    
+    <title>ImageCompressPro | Free Online Image Compression Tool</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "ImageCompressPro",
+      "url": "https://www.yourdomain.com",
+      "description": "Free online tool to compress and optimize your images",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Web Browser"
+    }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --accent-color: #ea4335;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+            --medium-gray: #757575;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--light-gray);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        main {
+            padding: 40px 0;
+        }
+        
+        .hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .ad-banner {
+            background-color: white;
+            padding: 15px;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: var(--shadow);
+        }
+        
+        .compressor-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .upload-area {
+            border: 2px dashed var(--medium-gray);
+            border-radius: 5px;
+            padding: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 30px;
+        }
+        
+        .upload-area:hover {
+            border-color: var(--primary-color);
+            background-color: rgba(66, 133, 244, 0.05);
+        }
+        
+        .upload-area i {
+            font-size: 48px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .upload-area p {
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #3367d6;
+        }
+        
+        .btn-secondary {
+            background-color: var(--medium-gray);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #616161;
+        }
+        
+        .settings-panel {
+            margin-bottom: 30px;
+            display: none;
+        }
+        
+        .settings-panel.active {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .slider-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .slider {
+            flex: 1;
+            margin-right: 15px;
+        }
+        
+        .slider-value {
+            width: 50px;
+            text-align: center;
+        }
+        
+        select, input[type="range"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .results {
+            display: none;
+            margin-top: 30px;
+        }
+        
+        .comparison {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .image-box {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+        }
+        
+        .image-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: var(--shadow);
+        }
+        
+        .image-info {
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            margin-top: 20px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+        
+        .feature-card i {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        footer {
+            background-color: var(--dark-gray);
+            color: white;
+            padding: 40px 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .comparison {
+                flex-direction: column;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                display: none;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .compressor-container {
+                padding: 20px;
+            }
+            
+            .upload-area {
+                padding: 30px 15px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+        
+        /* Loading animation */
+        .loader {
+            display: none;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid var(--primary-color);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">Image<span>Compress</span>Pro</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <!-- Ad Banner Top -->
+            <div class="ad-banner">
+                <!-- Replace with your AdSense code -->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"></script>
+                <!-- ImageCompressPro_Top_Banner -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                     data-ad-slot="YOUR_AD_SLOT_ID"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            
+            <section class="hero">
+                <h1>Compress Images Online for Free</h1>
+                <p>Reduce image file size without losing quality. Supports JPG, PNG, and WEBP formats. Perfect for websites, social media, and email attachments.</p>
+            </section>
+            
+            <section class="compressor-container">
+                <div class="upload-area" id="uploadArea">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Drag & Drop Your Images Here</h3>
+                    <p>or</p>
+                    <button class="btn" id="selectFilesBtn">Select Files</button>
+                    <input type="file" id="fileInput" accept="image/*" multiple style="display: none;">
+                </div>
+                
+                <div class="settings-panel" id="settingsPanel">
+                    <h3>Compression Settings</h3>
+                    <div class="form-group">
+                        <label for="formatSelect">Output Format:</label>
+                        <select id="formatSelect">
+                            <option value="original">Keep Original Format</option>
+                            <option value="jpeg">JPEG</option>
+                            <option value="png">PNG</option>
+                            <option value="webp">WEBP</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="qualitySlider">Quality: <span id="qualityValue">80</span>%</label>
+                        <div class="slider-container">
+                            <input type="range" id="qualitySlider" min="1" max="100" value="80" class="slider">
+                            <span class="slider-value" id="qualityValueDisplay">80</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="resizeCheckbox">
+                            <input type="checkbox" id="resizeCheckbox"> Resize Image
+                        </label>
+                        <div id="resizeOptions" style="display: none; margin-top: 10px;">
+                            <div style="display: flex; gap: 10px;">
+                                <div style="flex: 1;">
+                                    <label for="widthInput">Width (px):</label>
+                                    <input type="number" id="widthInput" min="1" placeholder="Auto">
+                                </div>
+                                <div style="flex: 1;">
+                                    <label for="heightInput">Height (px):</label>
+                                    <input type="number" id="heightInput" min="1" placeholder="Auto">
+                                </div>
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <label for="resizeMethod">Resize Method:</label>
+                                <select id="resizeMethod">
+                                    <option value="contain">Contain (fit within dimensions)</option>
+                                    <option value="cover">Cover (fill dimensions)</option>
+                                    <option value="stretch">Stretch (ignore aspect ratio)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn" id="compressBtn">Compress Images</button>
+                </div>
+                
+                <div class="loader" id="loader"></div>
+                
+                <div class="results" id="results">
+                    <h3>Compression Results</h3>
+                    <div class="comparison" id="comparisonContainer">
+                        <!-- Results will be inserted here -->
+                    </div>
+                    <button class="btn" id="downloadAllBtn">Download All</button>
+                    <button class="btn btn-secondary" id="compressMoreBtn">Compress More Images</button>
+                </div>
+            </section>
+            
+            <!-- Middle Ad Banner -->
+            <div class="ad-banner">
+                <!-- Replace with your AdSense code -->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"></script>
+                <!-- ImageCompressPro_Middle_Banner -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                     data-ad-slot="YOUR_AD_SLOT_ID"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            
+            <section id="how-it-works" class="section">
+                <h2>How Our Image Compressor Works</h2>
+                <p>Our tool uses advanced algorithms to reduce image file size while maintaining visual quality. Here's how to use it:</p>
+                <ol>
+                    <li>Upload your images by dragging and dropping or clicking the upload button</li>
+                    <li>Adjust compression settings to your preference</li>
+                    <li>Click "Compress Images" and wait a few seconds</li>
+                    <li>Download your optimized images</li>
+                </ol>
+            </section>
+            
+            <section id="features" class="features">
+                <div class="feature-card">
+                    <i class="fas fa-lock"></i>
+                    <h3>Secure Processing</h3>
+                    <p>Your images are processed in your browser and never uploaded to our servers, ensuring complete privacy.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Fast Compression</h3>
+                    <p>Our tool uses WebAssembly for near-native speed compression right in your browser.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Significant Savings</h3>
+                    <p>Reduce image sizes by up to 90% without noticeable quality loss.</p>
+                </div>
+            </section>
+            
+            <!-- Bottom Ad Banner -->
+            <div class="ad-banner">
+                <!-- Replace with your AdSense code -->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"></script>
+                <!-- ImageCompressPro_Bottom_Banner -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                     data-ad-slot="YOUR_AD_SLOT_ID"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            
+            <section id="faq" class="section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <h3>Is this service really free?</h3>
+                    <p>Yes, our image compression tool is completely free to use with no hidden charges.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What image formats are supported?</h3>
+                    <p>We support JPG, PNG, and WEBP formats for both input and output.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is there a file size limit?</h3>
+                    <p>You can compress images up to 20MB each. For larger files, consider resizing first.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How many images can I compress at once?</h3>
+                    <p>You can upload and compress up to 20 images simultaneously.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ImageCompressPro</h3>
+                    <p>The fastest, most secure way to compress your images online for free.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Image Optimization Guide</a></li>
+                        <li><a href="#">Web Performance Tips</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column" id="contact">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:contact@imagecompresspro.com">Email Us</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> ImageCompressPro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+        
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // File upload functionality
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const selectFilesBtn = document.getElementById('selectFilesBtn');
+        const settingsPanel = document.getElementById('settingsPanel');
+        const compressBtn = document.getElementById('compressBtn');
+        const loader = document.getElementById('loader');
+        const results = document.getElementById('results');
+        const comparisonContainer = document.getElementById('comparisonContainer');
+        const downloadAllBtn = document.getElementById('downloadAllBtn');
+        const compressMoreBtn = document.getElementById('compressMoreBtn');
+        const qualitySlider = document.getElementById('qualitySlider');
+        const qualityValueDisplay = document.getElementById('qualityValueDisplay');
+        const resizeCheckbox = document.getElementById('resizeCheckbox');
+        const resizeOptions = document.getElementById('resizeOptions');
+        
+        let filesToCompress = [];
+        let compressedFiles = [];
+        
+        // Update quality value display
+        qualitySlider.addEventListener('input', function() {
+            qualityValueDisplay.textContent = this.value;
+        });
+        
+        // Toggle resize options
+        resizeCheckbox.addEventListener('change', function() {
+            resizeOptions.style.display = this.checked ? 'block' : 'none';
+        });
+        
+        // Handle file selection
+        selectFilesBtn.addEventListener('click', function() {
+            fileInput.click();
+        });
+        
+        fileInput.addEventListener('change', function(e) {
+            handleFiles(e.target.files);
+        });
+        
+        // Drag and drop functionality
+        uploadArea.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            this.classList.add('dragover');
+        });
+        
+        uploadArea.addEventListener('dragleave', function() {
+            this.classList.remove('dragover');
+        });
+        
+        uploadArea.addEventListener('drop', function(e) {
+            e.preventDefault();
+            this.classList.remove('dragover');
+            handleFiles(e.dataTransfer.files);
+        });
+        
+        function handleFiles(files) {
+            if (files.length > 0) {
+                filesToCompress = Array.from(files);
+                uploadArea.style.display = 'none';
+                settingsPanel.classList.add('active');
+            }
+        }
+        
+        // Compress button click
+        compressBtn.addEventListener('click', function() {
+            if (filesToCompress.length === 0) return;
+            
+            // Show loader
+            loader.style.display = 'block';
+            settingsPanel.style.display = 'none';
+            
+            // Simulate compression (in a real app, you would use a library like compressor.js or pica)
+            setTimeout(() => {
+                compressedFiles = simulateCompression(filesToCompress);
+                showResults();
+            }, 1500);
+        });
+        
+        // Simulate compression (replace with actual compression logic)
+        function simulateCompression(files) {
+            return files.map(file => {
+                const originalSize = file.size;
+                const compressedSize = Math.round(originalSize * (100 - parseInt(qualitySlider.value)) / 100);
+                
+                return {
+                    originalFile: file,
+                    compressedFile: new File([file], `compressed_${file.name}`, { type: file.type }),
+                    originalSize: formatFileSize(originalSize),
+                    compressedSize: formatFileSize(compressedSize),
+                    reduction: Math.round((originalSize - compressedSize) / originalSize * 100)
+                };
+            });
+        }
+        
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+        
+        function showResults() {
+            loader.style.display = 'none';
+            results.style.display = 'block';
+            
+            comparisonContainer.innerHTML = '';
+            
+            compressedFiles.forEach(fileData => {
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    const imageBox = document.createElement('div');
+                    imageBox.className = 'image-box';
+                    
+                    imageBox.innerHTML = `
+                        <h4>${fileData.originalFile.name}</h4>
+                        <div style="display: flex; gap: 20px; justify-content: center;">
+                            <div>
+                                <p>Original</p>
+                                <img src="${e.target.result}" alt="Original">
+                                <p class="image-info">Size: ${fileData.originalSize}</p>
+                            </div>
+                            <div>
+                                <p>Compressed</p>
+                                <img src="${e.target.result}" alt="Compressed">
+                                <p class="image-info">Size: ${fileData.compressedSize} (${fileData.reduction}% smaller)</p>
+                            </div>
+                        </div>
+                        <a href="${e.target.result}" download="compressed_${fileData.originalFile.name}" class="btn download-btn">Download</a>
+                    `;
+                    
+                    comparisonContainer.appendChild(imageBox);
+                };
+                
+                reader.readAsDataURL(fileData.originalFile);
+            });
+        }
+        
+        // Compress more button
+        compressMoreBtn.addEventListener('click', function() {
+            results.style.display = 'none';
+            uploadArea.style.display = 'block';
+            settingsPanel.classList.remove('active');
+            filesToCompress = [];
+            fileInput.value = '';
+        });
+        
+        // Download all button
+        downloadAllBtn.addEventListener('click', function() {
+            compressedFiles.forEach(fileData => {
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(fileData.compressedFile);
+                link.download = `compressed_${fileData.originalFile.name}`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+        });
+    </script>
+    
+    <!-- Google Analytics (optional) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-XXXXX-Y');
+    </script>
+</body>
+</html>
