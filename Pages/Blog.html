@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the latest articles on technology, lifestyle, and more. Our blog provides insightful content with expert analysis and tips.">
+    <meta name="keywords" content="blog, articles, technology, lifestyle, tips, news">
+    <meta name="author" content="TechLife Blog">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="TechLife Blog | Latest Articles on Technology & Lifestyle">
+    <meta property="og:description" content="Discover insightful articles on technology, lifestyle, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/blog">
+    <meta property="og:image" content="https://yourwebsite.com/images/blog-social-share.jpg">
+    
+    <title>TechLife Blog | Latest Articles on Technology & Lifestyle</title>
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourwebsite.com/blog">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "TechLife Blog",
+      "url": "https://yourwebsite.com/blog",
+      "description": "Latest articles on technology, lifestyle, and more",
+      "publisher": {
+        "@type": "Organization",
+        "name": "TechLife",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://yourwebsite.com/images/logo.png"
+        }
+      }
+    }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --accent-color: #ea4335;
+            --light-color: #f8f9fa;
+            --dark-color: #202124;
+            --gray-color: #5f6368;
+            --light-gray: #e0e0e0;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f5f5f5;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .logo-text span {
+            color: var(--primary-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--gray-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--gray-color);
+            cursor: pointer;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1600x900/?technology');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .search-bar {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .search-bar input {
+            width: 100%;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .search-bar button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .search-bar button:hover {
+            background-color: #3367d6;
+        }
+        
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .blog-posts {
+            flex: 2;
+            min-width: 0;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .post-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+        
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .post-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .post-content {
+            padding: 25px;
+        }
+        
+        .post-category {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: var(--border-radius);
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .post-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .post-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+        
+        .post-meta span {
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .post-meta i {
+            margin-right: 5px;
+        }
+        
+        .post-excerpt {
+            margin-bottom: 20px;
+            color: var(--gray-color);
+        }
+        
+        .read-more {
+            display: inline-block;
+            color: var(--primary-color);
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .read-more:hover {
+            color: #3367d6;
+            text-decoration: underline;
+        }
+        
+        .sidebar-widget {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .widget-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--light-gray);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .popular-posts {
+            list-style: none;
+        }
+        
+        .popular-post {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .popular-post:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .popular-post-image {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin-right: 15px;
+        }
+        
+        .popular-post-title {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        
+        .popular-post-date {
+            font-size: 0.8rem;
+            color: var(--gray-color);
+        }
+        
+        .categories-list {
+            list-style: none;
+        }
+        
+        .categories-list li {
+            margin-bottom: 10px;
+        }
+        
+        .categories-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--dark-color);
+            text-decoration: none;
+            transition: var(--transition);
+            padding: 8px 0;
+        }
+        
+        .categories-list a:hover {
+            color: var(--primary-color);
+        }
+        
+        .categories-list span {
+            background-color: var(--light-gray);
+            color: var(--gray-color);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tag {
+            display: inline-block;
+            background-color: var(--light-gray);
+            color: var(--gray-color);
+            padding: 5px 10px;
+            border-radius: var(--border-radius);
+            font-size: 0.8rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .newsletter-form input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form button {
+            width: 100%;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            padding: 12px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .newsletter-form button:hover {
+            background-color: #3367d6;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .page-numbers {
+            display: flex;
+            list-style: none;
+        }
+        
+        .page-numbers li {
+            margin: 0 5px;
+        }
+        
+        .page-numbers a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            color: var(--dark-color);
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .page-numbers a:hover, .page-numbers a.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .ad-container {
+            width: 100%;
+            margin: 30px 0;
+            text-align: center;
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: var(--border-radius);
+        }
+        
+        .ad-label {
+            font-size: 0.8rem;
+            color: var(--gray-color);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 15px;
+            }
+            
+            nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: var(--box-shadow);
+                padding: 20px;
+                transform: translateY(-150%);
+                transition: var(--transition);
+                z-index: 99;
+            }
+            
+            nav.active {
+                transform: translateY(0);
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 0 0 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="/" class="logo">
+                <i class="fas fa-pen-fancy logo-icon"></i>
+                <span class="logo-text">Tech<span>Life</span></span>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#" class="active">Blog</a></li>
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#">Lifestyle</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>TechLife Blog</h1>
+            <p>Discover the latest articles on technology, lifestyle, and more with expert analysis and tips.</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Search articles...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+    
+    <main class="container">
+        <!-- Top Ad Banner -->
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <!-- Replace with your Google Adsense code -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"></script>
+            <!-- Blog_Top_Banner -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                 data-ad-slot="YOUR_AD_SLOT_ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <div class="main-content">
+            <section class="blog-posts">
+                <article class="post-card">
+                    <img src="https://source.unsplash.com/random/800x400/?technology" alt="Latest Technology Trends" class="post-image">
+                    <div class="post-content">
+                        <span class="post-category">Technology</span>
+                        <h2 class="post-title">The Future of Artificial Intelligence in 2023</h2>
+                        <div class="post-meta">
+                            <span><i class="far fa-user"></i> John Doe</span>
+                            <span><i class="far fa-calendar-alt"></i> June 15, 2023</span>
+                            <span><i class="far fa-clock"></i> 5 min read</span>
+                        </div>
+                        <p class="post-excerpt">Explore the latest advancements in AI technology and how they're shaping our future. From machine learning to neural networks, discover what's coming next in the world of artificial intelligence.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="post-card">
+                    <img src="https://source.unsplash.com/random/800x400/?lifestyle" alt="Healthy Lifestyle Tips" class="post-image">
+                    <div class="post-content">
+                        <span class="post-category" style="background-color: var(--secondary-color);">Lifestyle</span>
+                        <h2 class="post-title">10 Simple Habits for a Healthier Lifestyle</h2>
+                        <div class="post-meta">
+                            <span><i class="far fa-user"></i> Jane Smith</span>
+                            <span><i class="far fa-calendar-alt"></i> June 10, 2023</span>
+                            <span><i class="far fa-clock"></i> 8 min read</span>
+                        </div>
+                        <p class="post-excerpt">Small changes can lead to big results. Learn about 10 simple habits you can incorporate into your daily routine to improve your health and overall well-being.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="post-card">
+                    <img src="https://source.unsplash.com/random/800x400/?gadgets" alt="Smartphone Comparison" class="post-image">
+                    <div class="post-content">
+                        <span class="post-category" style="background-color: var(--accent-color);">Gadgets</span>
+                        <h2 class="post-title">Top 5 Smartphones of 2023: Which One Should You Buy?</h2>
+                        <div class="post-meta">
+                            <span><i class="far fa-user"></i> Mike Johnson</span>
+                            <span><i class="far fa-calendar-alt"></i> June 5, 2023</span>
+                            <span><i class="far fa-clock"></i> 12 min read</span>
+                        </div>
+                        <p class="post-excerpt">We've tested and compared the latest smartphones to help you find the perfect device for your needs and budget. See which phones made our top 5 list this year.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="post-card">
+                    <img src="https://source.unsplash.com/random/800x400/?productivity" alt="Productivity Tips" class="post-image">
+                    <div class="post-content">
+                        <span class="post-category">Productivity</span>
+                        <h2 class="post-title">Boost Your Productivity With These Tech Tools</h2>
+                        <div class="post-meta">
+                            <span><i class="far fa-user"></i> Sarah Williams</span>
+                            <span><i class="far fa-calendar-alt"></i> May 28, 2023</span>
+                            <span><i class="far fa-clock"></i> 6 min read</span>
+                        </div>
+                        <p class="post-excerpt">Discover the best apps and tools to help you stay focused, organized, and productive throughout your workday. These recommendations will help you get more done in less time.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <!-- Middle Ad Banner -->
+                <div class="ad-container">
+                    <div class="ad-label">Advertisement</div>
+                    <!-- Replace with your Google Adsense code -->
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"></script>
+                    <!-- Blog_Middle_Banner -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                         data-ad-slot="YOUR_AD_SLOT_ID"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+                
+                <article class="post-card">
+                    <img src="https://source.unsplash.com/random/800x400/?travel" alt="Travel Photography Tips" class="post-image">
+                    <div class="post-content">
+                        <span class="post-category" style="background-color: var(--secondary-color);">Travel</span>
+                        <h2 class="post-title">Essential Photography Tips for Your Next Adventure</h2>
+                        <div class="post-meta">
+                            <span><i class="far fa-user"></i> David Chen</span>
+                            <span><i class="far fa-calendar-alt"></i> May 20, 2023</span>
+                            <span><i class="far fa-clock"></i> 10 min read</span>
+                        </div>
+                        <p class="post-excerpt">Capture stunning travel photos with these expert tips. Learn about composition, lighting, and the best gear to bring on your next trip to document your adventures beautifully.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="post-card">
+                    <img src="https://source.unsplash.com/random/800x400/?coding" alt="Programming Languages" class="post-image">
+                    <div class="post-content">
+                        <span class="post-category">Programming</span>
+                        <h2 class="post-title">The Most In-Demand Programming Languages for 2023</h2>
+                        <div class="post-meta">
+                            <span><i class="far fa-user"></i> Alex Rodriguez</span>
+                            <span><i class="far fa-calendar-alt"></i> May 15, 2023</span>
+                            <span><i class="far fa-clock"></i> 7 min read</span>
+                        </div>
+                        <p class="post-excerpt">Which programming languages should you learn this year? We analyze job market trends and industry needs to help you decide where to focus your learning efforts.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <div class="pagination">
+                    <ul class="page-numbers">
+                        <li><a href="#" class="active">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i></a></li>
+                    </ul>
+                </div>
+            </section>
+            
+            <aside class="sidebar">
+                <!-- Sidebar Ad -->
+                <div class="ad-container">
+                    <div class="ad-label">Advertisement</div>
+                    <!-- Replace with your Google Adsense code -->
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"></script>
+                    <!-- Blog_Sidebar -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                         data-ad-slot="YOUR_AD_SLOT_ID"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Popular Posts</h3>
+                    <ul class="popular-posts">
+                        <li>
+                            <img src="https://source.unsplash.com/random/100x75/?tech1" alt="Popular Post" class="popular-post-image">
+                            <div>
+                                <h4 class="popular-post-title">How to Secure Your Online Accounts in 2023</h4>
+                                <p class="popular-post-date">May 10, 2023</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="https://source.unsplash.com/random/100x75/?tech2" alt="Popular Post" class="popular-post-image">
+                            <div>
+                                <h4 class="popular-post-title">The Best Free Software for Small Businesses</h4>
+                                <p class="popular-post-date">April 28, 2023</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="https://source.unsplash.com/random/100x75/?tech3" alt="Popular Post" class="popular-post-image">
+                            <div>
+                                <h4 class="popular-post-title">5G Technology: What You Need to Know</h4>
+                                <p class="popular-post-date">April 15, 2023</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="https://source.unsplash.com/random/100x75/?tech4" alt="Popular Post" class="popular-post-image">
+                            <div>
+                                <h4 class="popular-post-title">Home Office Setup: Essential Equipment Guide</h4>
+                                <p class="popular-post-date">April 5, 2023</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Categories</h3>
+                    <ul class="categories-list">
+                        <li><a href="#">Technology <span>24</span></a></li>
+                        <li><a href="#">Lifestyle <span>18</span></a></li>
+                        <li><a href="#">Gadgets <span>15</span></a></li>
+                        <li><a href="#">Productivity <span>12</span></a></li>
+                        <li><a href="#">Travel <span>9</span></a></li>
+                        <li><a href="#">Programming <span>7</span></a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Tags</h3>
+                    <div class="tags">
+                        <a href="#" class="tag">#AI</a>
+                        <a href="#" class="tag">#Smartphones</a>
+                        <a href="#" class="tag">#Health</a>
+                        <a href="#" class="tag">#Software</a>
+                        <a href="#" class="tag">#Photography</a>
+                        <a href="#" class="tag">#Security</a>
+                        <a href="#" class="tag">#WebDev</a>
+                        <a href="#" class="tag">#5G</a>
+                    </div>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates and articles.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+                
+                <!-- Sidebar Bottom Ad -->
+                <div class="ad-container">
+                    <div class="ad-label">Advertisement</div>
+                    <!-- Replace with your Google Adsense code -->
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"></script>
+                    <!-- Blog_Sidebar_Bottom -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                         data-ad-slot="YOUR_AD_SLOT_ID"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </aside>
+        </div>
+        
+        <!-- Bottom Ad Banner -->
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <!-- Replace with your Google Adsense code -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"></script>
+            <!-- Blog_Bottom_Banner -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                 data-ad-slot="YOUR_AD_SLOT_ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </main>
+    
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Search functionality
+        const searchInput = document.querySelector('.search-bar input');
+        const searchButton = document.querySelector('.search-bar button');
+        
+        searchButton.addEventListener('click', () => {
+            if (searchInput.value.trim() !== '') {
+                alert('Searching for: ' + searchInput.value);
+                // In a real implementation, you would redirect to search results or filter posts
+            }
+        });
+        
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && searchInput.value.trim() !== '') {
+                alert('Searching for: ' + searchInput.value);
+                // In a real implementation, you would redirect to search results or filter posts
+            }
+        });
+        
+        // Newsletter form submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = newsletterForm.querySelector('input').value;
+            alert('Thank you for subscribing with: ' + email);
+            newsletterForm.reset();
+        });
+    </script>
+</body>
+</html>

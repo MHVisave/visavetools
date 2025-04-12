@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Manohar Visave Solutions - Our mission, vision, and commitment to excellence in providing top-quality services since 2020.">
+    <meta name="keywords" content="Manohar Visave, About Us, Company Profile, Our Team, Mission Statement">
+    <meta name="author" content="Manohar Visave Solutions">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="About Us | Manohar Visave Solutions">
+    <meta property="og:description" content="Discover our story, values, and what makes us different.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://manoharvisave.com/about">
+    <meta property="og:image" content="https://manoharvisave.com/images/about-us-social.jpg">
+    
+    <title>About Us | Manohar Visave Solutions</title>
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://manoharvisave.com/about">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About Manohar Visave Solutions",
+      "description": "Information about Manohar Visave Solutions including mission, vision and team",
+      "url": "https://manoharvisave.com/about",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Manohar Visave Solutions",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://manoharvisave.com/images/logo.png"
+        }
+      }
+    }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --accent-color: #3498db;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-color: #6c757d;
+            --light-gray: #e9ecef;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f5f5f5;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            color: var(--secondary-color);
+            font-size: 2rem;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .logo-text span {
+            color: var(--primary-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--gray-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--gray-color);
+            cursor: pointer;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/Images/14.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--gray-color);
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+            color: var(--gray-color);
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .mission-vision {
+            background-color: var(--light-color);
+        }
+        
+        .mv-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .mv-card {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .mv-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .mv-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(231, 76, 60, 0.1);
+            color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 20px;
+        }
+        
+        .mv-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .mv-card p {
+            color: var(--gray-color);
+        }
+        
+        .team {
+            background-color: white;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .member-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .member-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .member-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        
+        .member-info p {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .member-info .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .member-info .social-links a {
+            color: var(--gray-color);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        
+        .member-info .social-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .stats {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://source.unsplash.com/random/1600x900/?numbers');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .stat-item h3 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .stat-item p {
+            font-size: 1.2rem;
+            color: var(--light-gray);
+        }
+        
+        .ad-container {
+            width: 100%;
+            margin: 30px 0;
+            text-align: center;
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: var(--border-radius);
+        }
+        
+        .ad-label {
+            font-size: 0.8rem;
+            color: var(--gray-color);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 15px;
+            }
+            
+            nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: var(--box-shadow);
+                padding: 20px;
+                transform: translateY(-150%);
+                transition: var(--transition);
+                z-index: 99;
+            }
+            
+            nav.active {
+                transform: translateY(0);
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 0 0 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate {
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="/" class="logo">
+                <i class="fas fa-lightbulb logo-icon"></i>
+                <span class="logo-text">Manohr<span>Visave</span></span>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="About Us.html" class="active">About Us</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>About VisaveTools</h1>
+            <p>Discover our story, values, and what makes us different</p>
+        </div>
+    </section>
+    
+    <main class="container">
+        <!-- Top Ad Banner -->
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <!-- Replace with your Google Adsense code -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"></script>
+            <!-- About_Top_Banner -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                 data-ad-slot="YOUR_AD_SLOT_ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <section class="section">
+            <div class="about-content">
+                <div class="about-text animate">
+                    <h3>Our Story</h3>
+                    <p>Founded in 2020, Manohr Visave Solutions began with a simple vision: to deliver exceptional services that make a real difference in our clients' lives. What started as a one-person operation has grown into a trusted team of professionals dedicated to excellence.</p>
+                    <p>With years of experience in the industry, we've developed a reputation for reliability, innovation, and outstanding customer service. Our journey has been marked by continuous learning and adaptation to the ever-changing technological landscape.</p>
+                    <p>We believe in building long-term relationships with our clients, understanding their unique needs, and providing tailored solutions that drive real results.</p>
+                </div>
+                <div class="about-image animate delay-1">
+                    <img src="/Images/10.jpg" alt="Our Team at Work">
+                </div>
+            </div>
+            
+            <!-- Middle Ad Banner -->
+            <div class="ad-container">
+                <div class="ad-label">Advertisement</div>
+                <!-- Replace with your Google Adsense code -->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"></script>
+                <!-- About_Middle_Banner -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                     data-ad-slot="YOUR_AD_SLOT_ID"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </section>
+        
+        <section class="section mission-vision">
+            <h2 class="section-title">Our Mission & Vision</h2>
+            <p class="section-subtitle">Guiding principles that drive everything we do</p>
+            
+            <div class="mv-container">
+                <div class="mv-card animate delay-1">
+                    <div class="mv-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To empower businesses and individuals through innovative solutions, exceptional service, and unwavering commitment to quality. We strive to build lasting relationships based on trust, transparency, and measurable results.</p>
+                </div>
+                
+                <div class="mv-card animate delay-2">
+                    <div class="mv-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To be recognized as a leader in our field, known for transforming challenges into opportunities through creativity, expertise, and a client-first approach that sets new standards in our industry.</p>
+                </div>
+                
+                <div class="mv-card animate delay-3">
+                    <div class="mv-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Our Values</h3>
+                    <p>Integrity, Innovation, Excellence, and Community. These core values guide every decision we make and every interaction we have with our clients, partners, and team members.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section team">
+            <h2 class="section-title">Meet Our Team</h2>
+            <p class="section-subtitle">The talented professionals behind our success</p>
+            
+            <div class="team-grid">
+                <div class="team-member animate">
+                    <img src="/Images/11.jpg" alt="Manohar Visave" class="member-image">
+                    <div class="member-info">
+                        <h3>Manohr Visave</h3>
+                        <p>Founder & CEO</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member animate delay-1">
+                    <img src="/Images/3.jpg" alt="Team Member" class="member-image">
+                    <div class="member-info">
+                        <h3>Jagruti Visave</h3>
+                        <p>Operations Manager</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member animate delay-2">
+                    <img src="/Images/2.jpg" alt="Team Member" class="member-image">
+                    <div class="member-info">
+                        <h3>Tushar Visave</h3>
+                        <p>Lead Developer</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member animate delay-3">
+                    <img src="/Images/1.jpg" alt="Team Member" class="member-image">
+                    <div class="member-info">
+                        <h3>Sangita Visave</h3>
+                        <p>Marketing Specialist</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section stats">
+            <h2 class="section-title">By The Numbers</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-item animate">
+                    <h3 class="counter" data-target="150">0</h3>
+                    <p>Happy Clients</p>
+                </div>
+                
+                <div class="stat-item animate delay-1">
+                    <h3 class="counter" data-target="300">0</h3>
+                    <p>Projects Completed</p>
+                </div>
+                
+                <div class="stat-item animate delay-2">
+                    <h3 class="counter" data-target="5">0</h3>
+                    <p>Years Experience</p>
+                </div>
+                
+                <div class="stat-item animate delay-3">
+                    <h3 class="counter" data-target="98">0</h3>
+                    <p>Client Satisfaction</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Bottom Ad Banner -->
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <!-- Replace with your Google Adsense code -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"></script>
+            <!-- About_Bottom_Banner -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                 data-ad-slot="YOUR_AD_SLOT_ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </main>
+    
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Counter animation
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+        
+        function animateCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+        
+        // Animation on scroll
+        const animateElements = document.querySelectorAll('.animate');
+        
+        function checkScroll() {
+            animateElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = 1;
+                }
+            });
+        }
+        
+        // Initialize animations
+        window.addEventListener('load', () => {
+            checkScroll();
+            animateCounters();
+        });
+        
+        window.addEventListener('scroll', checkScroll);
+        
+        // In a real implementation, you might want to add:
+        // 1. Form submission for contact section
+        // 2. Interactive team member profiles
+        // 3. Testimonial slider
+        // 4. Client logo carousel
+    </script>
+</body>
+</html>
