@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Numerology Checker | Best & Dangerous Number Tool</title>
+  <meta name="description" content="Mobile Numerology Checker tool. Check 10-digit mobile number for Best and Dangerous pairs along with Single Digit numerology. Free online tool in Hindi for accurate numerology results.">
+  <meta name="keywords" content="Mobile Numerology, Best Number, Dangerous Number, Numerology Checker, Hindi Tool, 10 Digit Mobile Number">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.example.com/mobile-numerology-checker">
+  <style>
+    body{font-family:Arial,sans-serif;background:#f5f7fb;padding:20px;margin:0}
+    header, footer{background:#2563eb;color:#fff;text-align:center;padding:20px;border-radius:8px;margin-bottom:20px}
+    .card{max-width:720px;margin:auto;background:#fff;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.08);padding:20px}
+    h1{font-size:24px;margin-bottom:10px}
+    .muted{color:#64748b;margin-bottom:12px;display:block}
+    input{width:100%;padding:12px;font-size:16px;border:1px solid #ddd;border-radius:10px;margin:10px 0}
+    button{padding:12px 18px;border:none;border-radius:10px;font-size:16px;cursor:pointer;background:#2563eb;color:#fff}
+    table{width:100%;border-collapse:collapse;margin-top:16px}
+    th,td{padding:10px;border-bottom:1px solid #eee;text-align:center}
+    th{background:#f1f5f9}
+    .best{background:#e6f4ea;color:#137333;font-weight:700}
+    .danger{background:#fdecea;color:#a50e0e;font-weight:700}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📱 Mobile Numerology Checker</h1>
+    <p>Check Best & Dangerous number pairs with Single Digit numerology online in Hindi.</p>
+  </header>
+
+  <div class="card">
+    <input id="mobile" type="text" placeholder="10 digit mobile number" maxlength="10" />
+    <button onclick="checkNumerology()">Check</button>
+    <div id="singleDigit" style="margin-top:12px;font-size:18px;font-weight:700"></div>
+    <table id="resultTable" style="display:none">
+      <thead>
+        <tr><th>Pair</th><th>Result</th></tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Mobile Numerology Checker. All rights reserved.</p>
+  </footer>
+
+<script>
+  const BEST = new Set([11,12,13,15,17,19,25,29,31,33,35,36,37,39,51,52,53,55,57,59,63,66,69,71,73,75,91,92,93,95,96,99]);
+  const DANGER = new Set([14,16,18,20,21,22,23,24,26,27,28,32,34,38,40,41,42,43,44,45,46,47,48,49,54,56,58,61,62,64,65,67,68,72,74,76,77,78,79,80,81,82,83,84,85,86,87,88,89,94,97,98]);
+
+  function checkNumerology(){
+    const num = document.getElementById('mobile').value.trim();
+    if(!/^\d{10}$/.test(num)){
+      alert('कृपया 10 digit mobile number डालें');
+      return;
+    }
+
+    let sum = 0;
+    for(let i=0;i<num.length;i++) sum += parseInt(num[i]);
+    const singleDigit = ((sum-1)%9)+1;
+    document.getElementById('singleDigit').innerHTML = '🔢 Single Digit (Numerology): <span style="color:#2563eb">'+singleDigit+'</span>';
+
+    const tbody = document.getElementById('tbody');
+    tbody.innerHTML = '';
+
+    for(let i=0;i<num.length-1;i++){
+      const pair = parseInt(num.substring(i,i+2));
+      const tr = document.createElement('tr');
+      const tdPair = document.createElement('td'); tdPair.textContent = pair;
+      const tdRes = document.createElement('td');
+      if(BEST.has(pair)){ tdRes.textContent='BEST'; tdRes.className='best'; }
+      else if(DANGER.has(pair)){ tdRes.textContent='DENGERS'; tdRes.className='danger'; }
+      else tdRes.textContent='-';
+      tr.appendChild(tdPair); tr.appendChild(tdRes); tbody.appendChild(tr);
+    }
+    document.getElementById('resultTable').style.display='table';
+  }
+</script>
+</body>
+</html>
